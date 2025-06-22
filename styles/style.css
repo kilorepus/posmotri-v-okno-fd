@@ -69,11 +69,13 @@ ol {
   display: grid;
   grid-template-columns: 711px 399px;
   grid-template-areas: "result details";
+  justify-content: center;
   align-items: end;
   gap: 30px;
   width: 1140px;
   height: 100%;
-  max-height: 534px;
+  padding: 133px 30px;
+  /* max-height: 534px; */
 }
 
 .result {
@@ -103,7 +105,7 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  min-height: 54px;
+  /* min-height: 54px; */
 }
 
 .search-form__checkbox-list {
@@ -177,11 +179,6 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 
 .search-form__textfield::placeholder {
   color: rgba(255, 255, 255, 0.7);
-  font-family: Fira Sans Condensed, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 0%;
 }
 
 .search-form__label:has(:hover) .search-form__label-text {
@@ -213,30 +210,25 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 
 .content__accent {
   color: #545050;
-  font-family: Oswald, sans-serif;
-  font-weight: 700;
-  font-size: 75px;
-  line-height: 94%;
-  text-transform: uppercase;
 }
 
 .content__list-container {
   position: relative;
   height: 298px;
   padding-bottom: 3px;
-  overflow: hidden scroll;
+  overflow: auto;
 }
 
 .content__list {
   display: inline-flex;
   flex-direction: column;
-  row-gap: 30px;
+  /* row-gap: 30px; */
+  gap: 30px;
 }
 
 .content__list-item {
-  height: 103px;
-  padding-right: 3px;
-  padding-left: 3px;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 
 .content__card-link {
@@ -282,7 +274,12 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   font-size: 18px;
   line-height: 16.2px;
 
+  /* line-clamp: 4; */
+    display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
   line-clamp: 4;
+  overflow: hidden;
 }
 
 .button {
@@ -329,6 +326,10 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 }
 
 .content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:active {
   background-color: #545050;
 }
 
